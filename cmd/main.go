@@ -22,7 +22,7 @@ func main() {
 	handlers := handler.NewHandler(services)
 
 	srv := new(goozon.Server)
-	if err := srv.Run(viper.GetString("port"), handlers.Routes()); err != nil {
+	if err := srv.Run(viper.GetString("8080"), handlers.Routes()); err != nil {
 		log.Fatal("error occured while running http server", err.Error())
 	}
 }

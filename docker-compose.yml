@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  urlshotern-app:
+    container_name: urlshotern-app
+    build: ./
+    command: ./wait-for-postgres.sh db ./urlshotern-app
+    ports:
+      - 8000:8000
+    depends_on: 
+      - db
+    environment:
+      - APP_PASSWORD=qwerty
+
+ 
